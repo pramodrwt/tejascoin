@@ -24,8 +24,8 @@ const initHttpServer = (httpPort:number) => {
     res.send(getBlockchain());
   });
 
-  //route to add new block into blockchain
-  app.post('/addBlock', (req, res) => {
+  //route to mine new block into blockchain
+  app.post('/mineBlock', (req, res) => {
     const newBlock: Block = generateNextBlock(req.body.data);
     res.send(newBlock);
   });
